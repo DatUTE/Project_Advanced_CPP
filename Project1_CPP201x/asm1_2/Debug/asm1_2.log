@@ -1,0 +1,7 @@
+﻿  Main.cpp
+E:\code\CPP201x_asm1_datvdfx09392@funix.edu.vn\asm1_2\Main.cpp(423,20): warning C4018: '<': signed/unsigned mismatch
+E:\code\CPP201x_asm1_datvdfx09392@funix.edu.vn\asm1_2\Main.cpp(439,20): warning C4018: '<': signed/unsigned mismatch
+E:\code\CPP201x_asm1_datvdfx09392@funix.edu.vn\asm1_2\Main.cpp(471,20): warning C4018: '<': signed/unsigned mismatch
+E:\code\CPP201x_asm1_datvdfx09392@funix.edu.vn\asm1_2\Main.cpp(496,20): warning C4018: '<': signed/unsigned mismatch
+E:\code\CPP201x_asm1_datvdfx09392@funix.edu.vn\asm1_2\Main.cpp(164): warning C4715: 'menu': not all control paths return a value
+  asm1_2.vcxproj -> E:\code\CPP201x_asm1_datvdfx09392@funix.edu.vn\Debug\asm1_2.exe

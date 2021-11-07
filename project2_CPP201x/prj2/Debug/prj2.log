@@ -1,0 +1,26 @@
+﻿  prj2.cpp
+E:\code\project2_CPP201x\prj2\prj2.cpp(539,20): warning C4018: '<': signed/unsigned mismatch
+E:\code\project2_CPP201x\prj2\prj2.cpp(555,20): warning C4018: '<': signed/unsigned mismatch
+E:\code\project2_CPP201x\prj2\prj2.cpp(590,26): warning C4101: 'e': unreferenced local variable
+E:\code\project2_CPP201x\prj2\prj2.cpp(730,26): warning C4101: 'e': unreferenced local variable
+E:\code\project2_CPP201x\prj2\List.h(27): warning C4661: 'List<Setting *>::List(void)': no suitable definition provided for explicit template instantiation request
+E:\code\project2_CPP201x\prj2\List.h(18): message : see declaration of 'List<Setting *>::List'
+E:\code\project2_CPP201x\prj2\List.h(27): warning C4661: 'List<Setting *>::~List(void)': no suitable definition provided for explicit template instantiation request
+E:\code\project2_CPP201x\prj2\List.h(19): message : see declaration of 'List<Setting *>::~List'
+E:\code\project2_CPP201x\prj2\List.h(27): warning C4661: 'void List<Setting *>::add(const T &)': no suitable definition provided for explicit template instantiation request
+          with
+          [
+              T=Setting *
+          ]
+E:\code\project2_CPP201x\prj2\List.h(20): message : see declaration of 'List<Setting *>::add'
+E:\code\project2_CPP201x\prj2\List.h(27): warning C4661: 'T List<T>::get(int)': no suitable definition provided for explicit template instantiation request
+          with
+          [
+              T=Setting *
+          ]
+E:\code\project2_CPP201x\prj2\List.h(21): message : see declaration of 'List<Setting *>::get'
+E:\code\project2_CPP201x\prj2\List.h(27): warning C4661: 'int List<Setting *>::size(void)': no suitable definition provided for explicit template instantiation request
+E:\code\project2_CPP201x\prj2\List.h(22): message : see declaration of 'List<Setting *>::size'
+E:\code\project2_CPP201x\prj2\List.h(27): warning C4661: 'void List<Setting *>::Swap(int,int)': no suitable definition provided for explicit template instantiation request
+E:\code\project2_CPP201x\prj2\List.h(23): message : see declaration of 'List<Setting *>::Swap'
+  prj2.vcxproj -> E:\code\project2_CPP201x\Debug\prj2.exe

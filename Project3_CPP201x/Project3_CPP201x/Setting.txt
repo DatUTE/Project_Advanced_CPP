@@ -1,0 +1,1 @@
+Common: dat,dat@gmail.com,14141414,100,1000 ; General: (GMT+09:00)  ,  English ; Sound: 0,0,0,0 ; Display: 0,0,0 ;

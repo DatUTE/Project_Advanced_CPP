@@ -1,0 +1,13 @@
+﻿  Project3_CPP201x.cpp
+E:\code\Project3_CPP201x\Project3_CPP201x\Project3_CPP201x.cpp(52,20): warning C4018: '<': signed/unsigned mismatch
+E:\code\Project3_CPP201x\Project3_CPP201x\Project3_CPP201x.cpp(409,20): warning C4018: '<': signed/unsigned mismatch
+E:\code\Project3_CPP201x\Project3_CPP201x\Project3_CPP201x.cpp(425,20): warning C4018: '<': signed/unsigned mismatch
+E:\code\Project3_CPP201x\Project3_CPP201x\Project3_CPP201x.cpp(442,20): warning C4018: '<': signed/unsigned mismatch
+E:\code\Project3_CPP201x\Project3_CPP201x\Project3_CPP201x.cpp(470,22): warning C4018: '<': signed/unsigned mismatch
+E:\code\Project3_CPP201x\Project3_CPP201x\Project3_CPP201x.cpp(497,22): warning C4018: '<': signed/unsigned mismatch
+E:\code\Project3_CPP201x\Project3_CPP201x\Project3_CPP201x.cpp(536,20): warning C4018: '<': signed/unsigned mismatch
+E:\code\Project3_CPP201x\Project3_CPP201x\Project3_CPP201x.cpp(552,20): warning C4018: '<': signed/unsigned mismatch
+E:\code\Project3_CPP201x\Project3_CPP201x\Project3_CPP201x.cpp(587,26): warning C4101: 'e': unreferenced local variable
+E:\code\Project3_CPP201x\Project3_CPP201x\Project3_CPP201x.cpp(695,22): warning C4018: '<': signed/unsigned mismatch
+E:\code\Project3_CPP201x\Project3_CPP201x\Project3_CPP201x.cpp(706,26): warning C4101: 'e': unreferenced local variable
+  Project3_CPP201x.vcxproj -> E:\code\Project3_CPP201x\Debug\Project3_CPP201x.exe

@@ -1,0 +1,5 @@
+Common:tuan,tuan@gmail,com,11223311,100,1000;General:(GMT+13:00) , Southern Min;Sound: 0,0,0,0;Display: 0,0,0;
+Common:xyz,xyz@gmail.com,12121212,100,1000;General:(GMT-10:00) , Vietnamese;Sound: 0,0,0,0;Display: 3,2,1;
+Common:abc,abc@abc.com,12345678,100,1000;General:(GMT+12:00) , Wu (inc. Shanghainese);Sound: 0,0,0,0;Display: 0,0,0;
+Common:hoa,hoa@gmail.com,14141111,1000,10000;General:(GMT+13:00) , Yue (inc. Cantonese);Sound: 0,0,0,0;Display: 0,0,0;
+Common:dat,dat@gmail.com,14141414,100,1000;General:(GMT+07:00),Vietnamese;Sound: 0,0,0,0;Display: 1,2,3;

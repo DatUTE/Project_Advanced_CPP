@@ -1,0 +1,18 @@
+﻿  Car.cpp
+  Display.cpp
+  General.cpp
+  Project3_CPP201x.cpp
+E:\code\code c++\Project3_CPP201x\Project3_CPP201x\Project3_CPP201x.cpp(69,26): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+E:\code\code c++\Project3_CPP201x\Project3_CPP201x\Project3_CPP201x.cpp(294,60): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+E:\code\code c++\Project3_CPP201x\Project3_CPP201x\Project3_CPP201x.cpp(300,60): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+E:\code\code c++\Project3_CPP201x\Project3_CPP201x\Project3_CPP201x.cpp(310,60): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+E:\code\code c++\Project3_CPP201x\Project3_CPP201x\Project3_CPP201x.cpp(316,60): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+E:\code\code c++\Project3_CPP201x\Project3_CPP201x\Project3_CPP201x.cpp(587,26): warning C4101: 'e': unreferenced local variable
+E:\code\code c++\Project3_CPP201x\Project3_CPP201x\Project3_CPP201x.cpp(706,26): warning C4101: 'e': unreferenced local variable
+  Setting.cpp
+E:\code\code c++\Project3_CPP201x\Project3_CPP201x\Setting.cpp(33,17): warning C4129: '.': unrecognized character escape sequence
+E:\code\code c++\Project3_CPP201x\Project3_CPP201x\Setting.cpp(33,17): warning C4129: '-': unrecognized character escape sequence
+E:\code\code c++\Project3_CPP201x\Project3_CPP201x\Setting.cpp(33,17): warning C4129: '@': unrecognized character escape sequence
+  Sound.cpp
+  Generating Code...
+  Project3_CPP201x.vcxproj -> E:\code\code c++\Project3_CPP201x\x64\Debug\Project3_CPP201x.exe
