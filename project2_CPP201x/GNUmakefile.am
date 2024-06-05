@@ -1,0 +1,15 @@
+bin_PROGRAMS = main
+
+main_SOURCES = prj2.cpp
+
+main_SOURCES += \
+    src/Car.cpp \
+    src/Display.cpp \
+    src/General.cpp \
+    src/List.cpp    \
+    src/Setting.cpp \
+    src/Sound.cpp
+
+AM_CPPFLAGS = \
+      -I inc
+

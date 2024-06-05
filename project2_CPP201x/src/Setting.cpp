@@ -30,7 +30,7 @@ void Setting::xuatThongTin()
 void Setting::nhapThongTin()
 {
 
-	regex re_email("^([a-zA-Z0-9_\.\-]{3,})+\@(([a-zA-Z0-9\-]{3,})+\.)+([a-zA-Z0-9]{3})+$");						// Email phai co dang emai@abc.xyz form
+	regex re_email("^([a-zA-Z0-9_\\.\\-]{3,})+\\@(([a-zA-Z0-9\\-]{3,})+\\.)+([a-zA-Z0-9]{3})+$");	// Email phai co dang emai@abc.xyz form
 	regex re_perKey("^[0-9]{8}$");// ma so ca nhan phai du 8 so
 	regex re_name("^([a-zA-Z]){2,20}$");
 	string a;

@@ -5,7 +5,7 @@
 #include <iostream>
 #include <iomanip>
 #include <string>
-#include<regex>
+#include <regex>
 using namespace std;
 class Sound {
 public:

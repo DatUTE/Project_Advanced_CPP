@@ -8,13 +8,8 @@
 #include "Setting.h"
 #include "CommonInfo.h"
 #include "List.h"
-#define cls system("cls")
-
 
 List<Setting*> listCar;
-
-
-
 vector<CommonInfo> timezoneList;
 vector<CommonInfo> languageList;
 
@@ -128,7 +123,8 @@ bool check1(int y)
 }
 // show Menu and selection 
 int menu() {
-	system("cls");
+	int var = system("cls");
+	if(var == -1) cout << "fail to system(cls)" << endl;
 	int selection = 0;
 	cout << "--------------HELLO--------------\n";
 	cout << "1. Input the setting information\n";
@@ -138,16 +134,19 @@ int menu() {
 	switch (selection)
 	{
 	case 3:									// Exit 
-		system("cls");
+		var = system("cls");
+		if(var == -1) cout << "fail to system(cls)" << endl;
 		cout << "SEE YOU LATER!!!\n";
 		exit(0);
 		break;
 	case 1:									// Input info
-		system("cls");
+		var = system("cls");
+		if(var == -1) cout << "fail to system(cls)" << endl;
 		NhapThongTinCaiDat();
 		break;
 	case 2:									// Output info
-		system("cls");
+		var = system("cls");
+		if(var == -1) cout << "fail to system(cls)" << endl;
 		XuatThongTinCaiDat();
 		break;
 	}
@@ -157,7 +156,8 @@ int menu() {
 
 // Input Infomation
 void NhapThongTinCaiDat() {
-	cls;
+	int var = system("cls");
+	if(var == -1) cout << "fail to system(cls)" << endl;
 	int choice;
 	cout << "-------Nhap Thong Tin Cai Dat-------" << endl;
 	cout << "1. Nhap thong tin Display" << endl;
@@ -169,26 +169,30 @@ void NhapThongTinCaiDat() {
 	case 1: {
 		cout << " \n--- Nhap thong tin Display --- " << endl;
 		NhapThongTinCaiDat_Display();
-		cls;
+		var = system("cls");
+		if(var == -1) cout << "fail to system(cls)" << endl;
 		menu();
 		break;
 	}
 	case 2: {
 		cout << " \n--- Nhap thong tin Sound --- " << endl;
 		NhapThongTinCaiDat_Sound();
-		cls;
+		var = system("cls");
+		if(var == -1) cout << "fail to system(cls)" << endl;
 		menu();
 		break;
 	}
 	case 3: {
 		cout << " \n--- Nhap thong tin General --- " << endl;
 		NhapThongTinCaiDat_General();
-		cls;
+		var = system("cls");
+		if(var == -1) cout << "fail to system(cls)" << endl;
 		menu();
 		break;
 	}
 	case 4: {
-		cls;
+		var = system("cls");
+		if(var == -1) cout << "fail to system(cls)" << endl;
 		menu();
 		break;
 	}
@@ -204,7 +208,8 @@ void NhapThongTinCaiDat() {
 void NhapThongTinCaiDat_Display()
 {
 	int n;
-	cls;
+	int var = system("cls");
+	if(var == -1) cout << "fail to system(cls)" << endl;
 	char continues = 'n';
 	do {
 		Setting* tempCar = new Setting();
@@ -235,7 +240,8 @@ void NhapThongTinCaiDat_Display()
 
 	} while (continues == 'y');
 	SaveData();
-	system("cls");
+	var = system("cls");
+	if(var == -1) cout << "fail to system(cls)" << endl;
 	menu();
 
 }
@@ -271,14 +277,15 @@ void NhapThongTinCaiDat_Sound()
 		cout << endl;
 	} while (continues == 'y');
 	SaveData();
-	system("cls");
+	int var = system("cls");
+	if(var == -1) cout << "fail to system(cls)" << endl;
 	menu();
 }
 
 // Input General Information
 void NhapThongTinCaiDat_General()
 {
-
+	int var;
 	char continues = 'n';
 	do {
 		Setting* tempCar = new Setting();
@@ -326,17 +333,20 @@ void NhapThongTinCaiDat_General()
 		}
 		cout << "WILL YOU INPUT FOR CAR:  " << listCar.size() + 1 << " ? (y/n): ";
 		continues = checkYorN();
-		cls;
+		var = system("cls");
+		if(var == -1) cout << "fail to system(cls)" << endl;
 		cout << endl;
 	} while (continues == 'y');
 
 	SaveData();
-	cls;
+	var = system("cls");
+	if(var == -1) cout << "fail to system(cls)" << endl;
 	menu();
 }
 // Ouput Information
 void XuatThongTinCaiDat() {
-	cls;
+	int var = system("cls");
+	if(var == -1) cout << "fail to system(cls)" << endl;
 	int choice;
 	cout << "-------Xuat Thong Tin Cai Dat-------" << endl;
 	cout << "1. Xuat thong tin Display" << endl;
@@ -351,7 +361,8 @@ void XuatThongTinCaiDat() {
 	{
 		cout << " --- Xuat thong tin Display --- " << endl;
 		XuatThongTinCaiDat_Display();
-		cls;
+		var = system("cls");
+		if(var == -1) cout << "fail to system(cls)" << endl;
 		menu();
 		break;
 	}
@@ -359,7 +370,8 @@ void XuatThongTinCaiDat() {
 	{
 		cout << " --- Xuat thong tin Sound --- " << endl;
 		XuatThongTinCaiDat_Sound();
-		cls;
+		var = system("cls");
+		if(var == -1) cout << "fail to system(cls)" << endl;
 		menu();
 		break;
 	}
@@ -367,7 +379,8 @@ void XuatThongTinCaiDat() {
 	{
 		cout << " --- Xuat thong tin General --- " << endl;
 		XuatThongTinCaiDat_General();
-		cls;
+		var = system("cls");
+		if(var == -1) cout << "fail to system(cls)" << endl;
 		menu();
 		break;
 	}
@@ -409,7 +422,8 @@ const vector<string> explode(const string& s, const char& c)
 
 // Ouput Sound Information
 void XuatThongTinCaiDat_Sound() {
-	system("cls");
+	int var = system("cls");
+	if(var == -1) cout << "fail to system(cls)" << endl;
 	sortList_name();
 	cout << "---Sound setting---\n";
 	cout << setw(5) << "Car Name" << setw(10) << "Email" << setw(13) << "MSC" << setw(7) << "ODO" << setw(12) << "SEVICES" << setw(15) << "Media" << setw(10) << "Call" << setw(10) << "Navi" << setw(10) << "Notify" << endl;
@@ -418,12 +432,14 @@ void XuatThongTinCaiDat_Sound() {
 		listCar.get(i)->getSound()->xuatThongTin();		// output sound information
 		cout << endl;
 	}
-	system("pause");
+	int varPause = system("pause");
+	if(varPause == -1) cout << "fail to system(pause)" << endl;
 	menu();
 }
 // Ouput General Information
 void XuatThongTinCaiDat_General() {
-	system("cls");
+	int var = system("cls");
+	if(var == -1) cout << "fail to system(cls)" << endl;
 	sortList_name();
 	cout << "---General setting---\n";
 	cout << setw(5) << "Car Name" << setw(10) << "Email" << setw(13) << "MSC" << setw(7) << "ODO" << setw(12) << "SEVICES" << setw(17) << "TimeZone" << setw(14) << "Language" << endl;
@@ -434,11 +450,13 @@ void XuatThongTinCaiDat_General() {
 		cout << endl;
 	}
 
-	system("pause");
+	int varPause = system("pause");
+	if(varPause == -1) cout << "fail to system(pause)" << endl;
 }
 // Ouput Display Information
 void XuatThongTinCaiDat_Display() {
-	cls;
+	int var = system("cls");
+	if(var == -1) cout << "fail to system(cls)" << endl;
 	sortList_name();
 	cout << "---Display setting---\n";
 	cout << setw(5) << "Car Name" << setw(10) << "Email" << setw(13) << "MSC" << setw(7) << "ODO" << setw(12) << "SEVICES" << setw(15) << "Light" << setw(10) << "Taplo" << setw(10) << "Screen" << endl;
@@ -448,15 +466,19 @@ void XuatThongTinCaiDat_Display() {
 		listCar.get(i)->getDisplay()->xuatThongTin();
 		cout << endl;
 	}
-	system("pause");
+	int varPause = system("pause");
+	if(varPause == -1) cout << "fail to system(pause)" << endl;
 }
 // Ouput All Information
 void XuatTatCaThongTinCaiDat() {
-	cls;
+	int varPause;
+	int var = system("cls");
+	if(var == -1) cout << "fail to system(cls)" << endl;
 	int choose;
 	do
 	{
-		cls;
+		var = system("cls");
+		if(var == -1) cout << "fail to system(cls)" << endl;
 		cout << "1. Sap xep theo ten " << endl;
 		cout << "2. Sap xep theo mscn" << endl;
 		cout << "3. Quay lai menu" << endl;
@@ -466,7 +488,8 @@ void XuatTatCaThongTinCaiDat() {
 		{
 		case 1:
 		{
-			cls;
+			var = system("cls");
+			if(var == -1) cout << "fail to system(cls)" << endl;
 			cout << "Sap xep danh sach theo carname !" << endl;
 			sortList_name();		// sort data by name
 			for (int i = 0; i < listCar.size(); i++)
@@ -487,13 +510,15 @@ void XuatTatCaThongTinCaiDat() {
 				cout << endl;
 				cout << endl;
 			}
-			system("pause");
+			varPause = system("pause");
+			if(varPause == -1) cout << "fail to system(pause)" << endl;
 			break;
 		}
 
 		case 2:
 		{
-			cls;
+			var = system("cls");
+			if(var == -1) cout << "fail to system(cls)" << endl;
 			cout << "Sap xep theo ma so ca nhan ! " << endl;
 			sortList_mscn();	// sort data by mscn
 			for (int i = 0; i < listCar.size(); i++)
@@ -514,13 +539,15 @@ void XuatTatCaThongTinCaiDat() {
 				cout << endl;
 				cout << endl;
 			}
-			system("pause");
+			varPause = system("pause");
+			if(varPause == -1) cout << "fail to system(pause)" << endl;
 			break;
 			break;
 		}
 		case 3:
 		{
-			cls;
+			var = system("cls");
+			if(var == -1) cout << "fail to system(cls)" << endl;
 			menu();
 			break;
 		}
@@ -529,7 +556,8 @@ void XuatTatCaThongTinCaiDat() {
 			exit(0);
 			break;
 		}
-		system("pause");
+		varPause = system("pause");
+		if(varPause == -1) cout << "fail to system(pause)" << endl;
 	} while (1);
 }
 
@@ -785,6 +813,7 @@ int main(int argc, char** argv)
 	downloadTimeZone();
 	int choice = 0;
 	choice = menu();
-	system("pause");
+	int varPause = system("pause");
+	if(varPause == -1) cout << "fail to system(pause)" << endl;
 	return 0;
 }

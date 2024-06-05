@@ -36,6 +36,7 @@ T List<T> ::get(int pos)
 	{
 		cout << "Vuot qua so luong phan tu " << endl;
 	}
+	return {};
 }
 template<class T>
 int List<T> ::size()
