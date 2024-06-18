@@ -1,6 +1,7 @@
-aclocal && 
-automake --add-missing && 
-autoreconf -fi && 
-automake && 
-./configure && 
+#!/bin/bash
+aclocal
+automake --add-missing
+autoreconf -fi
+automake
+./configure
 make

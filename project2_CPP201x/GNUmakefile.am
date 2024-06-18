@@ -8,7 +8,8 @@ main_SOURCES += \
     src/General.cpp \
     src/List.cpp    \
     src/Setting.cpp \
-    src/Sound.cpp
+    src/Sound.cpp   \
+    utils/checkValid.cpp
 
 AM_CPPFLAGS = \
       -I inc \

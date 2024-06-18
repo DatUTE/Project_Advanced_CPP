@@ -7,7 +7,7 @@
 #include <cstdlib>
 #include <string>
 #include <stdexcept>
-#include"Setting.h"
+#include "Setting.h"
 
 template<class T>
 class List {

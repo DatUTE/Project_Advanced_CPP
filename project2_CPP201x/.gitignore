@@ -1,0 +1,6 @@
+*.o
+*.log
+*.status
+[^\.]*
+autom4te.cache/*
+.deps
