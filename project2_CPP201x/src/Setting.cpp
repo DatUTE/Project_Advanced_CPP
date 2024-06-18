@@ -1,8 +1,7 @@
-
 #include "Setting.h"
-#include<regex>
+#include "checkValid.h"
+#include <regex>
 
-int input_check(int n);
 Setting::Setting()
 {
 	general = new General();
@@ -33,12 +32,14 @@ void Setting::nhapThongTin()
 	regex re_email("^([a-zA-Z0-9_\\.\\-]{3,})+\\@(([a-zA-Z0-9\\-]{3,})+\\.)+([a-zA-Z0-9]{3})+$");	// Email phai co dang emai@abc.xyz form
 	regex re_perKey("^[0-9]{8}$");// ma so ca nhan phai du 8 so
 	regex re_name("^([a-zA-Z]){2,20}$");
-	string a;
+	string carName;
+	string email;
+	string personalKey;
 	while (1)
 	{
 		cout << "Nhap Ten Xe: ";
-		getline(cin, a);
-		setCarName(a);
+		getline(cin, carName);
+		setCarName(carName);
 		cin.ignore(0);
 		if (!regex_match(getCarName(),re_name))	// ten xe khong duoc la 1 chuoi rong or ki tu dac biet
 		{
@@ -52,8 +53,8 @@ void Setting::nhapThongTin()
 	while (1)
 	{
 		cout << "Nhap Email: ";
-		getline(cin, a);
-		setEmail(a);
+		getline(cin, email);
+		setEmail(email);
 		cin.ignore(0);
 		if (!regex_match(getEmail(), re_email)) // kiem tra dieu kien email 
 		{
@@ -67,8 +68,8 @@ void Setting::nhapThongTin()
 	while (1)
 	{
 		cout << "Nhap Ma So Ca Nhan: ";
-		cin >> a;
-		setPersonalKey(a);
+		cin >> personalKey;
+		setPersonalKey(personalKey);
 		if (!regex_match(getPersonalKey(), re_perKey))	// kiem tra dieu kien mscn
 		{
 			cout << "Ma So Nhap Vao Phai Du 8 So";
@@ -92,58 +93,32 @@ void Setting::setGeneral(General* gen)
 {
 	general = gen;
 }
+
 General* Setting::getGeneral()
 {
 	return general;
 }
+
 void Setting::setSound(Sound* sou)
 {
 	sound = sou;
 }
+
 Sound* Setting::getSound()
 {
 	return sound;
 }
+
 void Setting::setDisplay(Display* disp)
 {
 	display = disp;
 }
+
 Display* Setting::getDisplay()
 {
 	return this->display;
 }
-int input_check(int n)
-{
-	regex re_num("(\\+|-)?[0-9]+");
-	string s = "";
-	while (1) {
-		string output = "";
-		getline(cin, s);
-		for (int i = 0; i < s.length(); i++) {
-			if (s[i] == ' ') {
-				continue;
-			}
-			else {
-				output += s[i];
-			}
-		}
-		if (!regex_match(output, re_num)) {
-			cout << "Input value follow number!!!\n";
-			cout << "enter again: ";
-		}
-		else {
-			n = stoi(output);
-			if (n < 0) {
-				cout << "Input value greater than 0!!!\n";
-				cout << "enter again: ";
-			}
-			else {
-				return n;
-			}
-		}
 
-	}
-}
 void Setting::copyInfo(Setting* st)
 {
 	setCarName(st->getCarName());

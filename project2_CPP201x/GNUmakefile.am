@@ -11,5 +11,6 @@ main_SOURCES += \
     src/Sound.cpp
 
 AM_CPPFLAGS = \
-      -I inc
+      -I inc \
+      -I utils
 

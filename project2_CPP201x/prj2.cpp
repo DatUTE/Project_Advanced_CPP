@@ -5,7 +5,6 @@
 #include <stdlib.h>
 #include <regex>
 #include "Car.h"
-#include "Setting.h"
 #include "CommonInfo.h"
 #include "List.h"
 
