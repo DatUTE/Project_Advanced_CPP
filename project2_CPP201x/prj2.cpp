@@ -488,7 +488,7 @@ void downloadTimeZone() {
 	string h;
 	CommonInfo com;
 	vector <string> temp_commoninfo;
-	ifstream f("timezones.txt");
+	ifstream f("data/timezones.txt");
 	try {
 		if (f.is_open()) {
 			while (getline(f, h)) {
@@ -506,7 +506,7 @@ void downloadTimeZone() {
 		}
 	}
 	catch (const exception& e) {
-		ofstream file1("timezones_backup.txt");
+		ofstream file1("data/timezones_backup.txt");
 		if (file1.is_open()) {
 			file1 << "(GMT-12:00) /  International Date Line West\n" << "(GMT-11:00) /  Midway Island, Samoa\n" << "(GMT-10:00) /  Hawaii\n" << "(GMT-09:00) /  Alaska\n" << "(GMT-08:00) /  Tijuana, Baja California\n" << "(GMT-07:00) /  Chihuahua, La Paz, Mazatlan - New\n" << "(GMT-06:00) /  Guadalajara, Mexico City, Monterrey - New\n" << "(GMT-05:00) /  Eastern Time (US and Canada)\n" << "(GMT-04:00) /  Atlantic Time (Canada)\n" << "(GMT-03:30) /  Newfoundland\n" <<
 				"(GMT-02:00) /  Mid-Atlantic\n" << "(GMT-01:00) /  Azores\n" << "(GMT-00:00) /  Monrovia, Reykjavik\n" << "(GMT+01:00) /  Belgrade, Bratislava, Budapest, Ljubljana, Prague\n" << "(GMT+02:00) /  Minsk\n" << "(GMT+03:00) /  Moscow, St. Petersburg, Volgograd\n" << "(GMT+04:00) /  Abu Dhabi, Muscat\n" << "(GMT+04:30) /  Kabul\n" << "(GMT+05:00) /  Tashkent\n" << "(GMT+05:30) /  Chennai, Kolkata, Mumbai, New Delhi\n" << "(GMT+05:45) /  Kathmandu\n" <<
@@ -517,7 +517,7 @@ void downloadTimeZone() {
 		string s;
 		CommonInfo com2;
 		vector <string> temp_commoninfo2;
-		ifstream f2("timezones_backup.txt");
+		ifstream f2("data/timezones_backup.txt");
 		if (f2.is_open()) {
 			while (getline(f2, s)) {
 				temp_commoninfo2 = explode(s, '/');
@@ -535,7 +535,7 @@ void downloadLanguage() {
 	string s;
 	CommonInfo com;
 	vector<string> Temp_CommonInfo;
-	ifstream f("languages.txt");
+	ifstream f("data/languages.txt");
 	try
 	{
 		if (f.is_open()) {
@@ -558,7 +558,7 @@ void downloadLanguage() {
 
 	catch (const std::exception&)
 	{
-		ofstream file1("languages_backup.txt");
+		ofstream file1("data/languages_backup.txt");
 		if (file1.is_open())
 		{
 			file1 << "1 / Mandarin (entire branch)" << "\n2 / Spanish" << "\n3 / English" << "\n4 / Hindi" << "\n5 / Arabic" << "\n6 / Portuguese"
@@ -571,7 +571,7 @@ void downloadLanguage() {
 		string s;
 		CommonInfo com;
 		vector<string> Temp_CommonInfo;
-		ifstream f("languages_backup.txt");
+		ifstream f("data/languages_backup.txt");
 		if (f.is_open())
 		{
 			while (getline(f, s)) {
@@ -631,7 +631,7 @@ bool sortNumber(CommonInfo& a_string, CommonInfo& b_string)
 }
 // this is used to write data into file
 void SaveData() {
-	ofstream file1("Setting.txt");
+	ofstream file1("data/Setting.txt");
 	try {
 		if (file1.is_open()) {
 			for (int i = 0; i < listCar.size(); i++) { //write all data of obj elements: personal info, general, sound,display into file
@@ -642,6 +642,7 @@ void SaveData() {
 			}
 		}
 		else {
+			cout << "can't open file!\n";
 			throw exception(); //throw out the warning
 		}
 	}
