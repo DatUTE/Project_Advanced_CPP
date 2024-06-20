@@ -83,9 +83,9 @@ void Setting::nhapThongTin()
 	}
 	cin.ignore(1);
 	cout << "Nhap ODO: ";
-	setODO(input_check(0));
+	setODO(check_input_setting(0));
 	cout << "Nhap service_remind: ";
-	setServiceRemind(input_check(0));
+	setServiceRemind(check_input_setting(0));
 
 }
 

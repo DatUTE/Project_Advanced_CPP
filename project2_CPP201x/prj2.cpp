@@ -6,6 +6,7 @@
 #include <regex>
 #include "Car.h"
 #include "CommonInfo.h"
+#include "checkValid.h"
 #include "List.h"
 
 List<Setting*> listCar;
@@ -39,87 +40,6 @@ void sortList_mscn();
 bool sortName(CommonInfo& a_string, CommonInfo& b_string);
 bool sortNumber(CommonInfo& a_string, CommonInfo& b_string);
 
-// Check personalKey
-int check_personalKey(string a_personalKey)
-{
-	bool exist = false;
-	int m = -1;
-	for (int i = 0; i < listCar.size(); i++)
-	{
-		if (a_personalKey == listCar.get(i)->getPersonalKey())
-		{
-			exist = true;
-			m = i;
-			break;
-		}
-	}
-	if (exist)
-	{
-		cout << "Xe " << m + 1 << " Da Ton Tai, Thong Tin Se Bi Ghi De !" << endl;
-		return m;
-	}
-	else
-	{
-		cout << "Chiec Xe Moi " << listCar.size() + 1 << endl; ;
-		return (listCar.size());
-	}
-}
-// Check input
-int check_input(int n)
-{
-	regex re_num("^[0-9]+$");// format digit charactter
-	string input;
-	int NumberReturn = 0;
-	while (1) {
-		cout << "Enter your choice: ";
-		getline(cin, input);
-		if (regex_match(input, re_num) && stoi(input) < n && stoi(input) > 0)
-		{
-			NumberReturn = stoi(input);
-			break;
-		}
-	}
-	return NumberReturn;
-}
-
-//check yes or no follows y or n
-char checkYorN() { //function to if check input is yes or no
-	string s;
-	char a;
-	bool isvalid = true;
-	do {
-		cin >> s;
-		if ((s.length() > 1)) { //no entering more than 1 charater or numeric character
-			isvalid = false;
-			cout << "please only enter y/n: ";
-			continue;
-		}
-		else {
-			isvalid = true;
-		}
-		a = s[0];
-		if ((a == 'Y') || (a == 'y')) { //convert uppercase in to lowercase
-			a = 'y';
-		}
-		else if ((a == 'n') || (a == 'N')) {
-			a = 'n';
-		}
-		else {
-			isvalid = false;
-			cout << "please only enter y/n: ";
-		}
-	} while (!isvalid);
-	return a;
-}
-// check valua input in menu
-bool check1(int y)
-{
-	for (int i = 1; i <= 3; i++)
-	{
-		if (y == i) { return true; }
-	}
-	return false;
-}
 // show Menu and selection 
 int menu() {
 	system("clear");
@@ -207,7 +127,7 @@ void NhapThongTinCaiDat_Display()
 		tempCar->nhapThongTin();	//enter personal information (name, email,...)
 		if (listCar.size() > 0)
 		{
-			n = check_personalKey(tempCar->getPersonalKey());	//check if userkey existed or not
+			n = check_personalKey(tempCar->getPersonalKey(), listCar);	//check if userkey existed or not
 			if (n == listCar.size()) {
 				listCar.add(tempCar);
 			}
@@ -245,7 +165,7 @@ void NhapThongTinCaiDat_Sound()
 		tempCar->nhapThongTin();	//enter personal information (name, email,...), simalar to Sound setting
 		int m;
 		if (listCar.size() > 0) {
-			m = check_personalKey(tempCar->getPersonalKey());	//check if userkey existed or not
+			m = check_personalKey(tempCar->getPersonalKey(), listCar);	//check if userkey existed or not
 			if (m == listCar.size()) {
 				listCar.add(tempCar);
 			}
@@ -281,7 +201,7 @@ void NhapThongTinCaiDat_General()
 		tempCar->nhapThongTin();						//enter personal information (name, email,...)
 		if (listCar.size() > 0)
 		{
-			n = check_personalKey(tempCar->getPersonalKey()); //check if userkey existed or not
+			n = check_personalKey(tempCar->getPersonalKey(), listCar); //check if userkey existed or not
 			if (n == listCar.size())
 			{
 				listCar.add(tempCar);
