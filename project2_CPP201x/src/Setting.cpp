@@ -4,20 +4,17 @@
 
 Setting::Setting()
 {
-	general = new General();
-	sound = new Sound();
-	display = new Display();
+	m_general = new General();
+	m_sound = make_shared<Sound>();
+	m_display = new Display();
 }
 Setting::~Setting()
 {
-	if (general != nullptr) {
-		delete general;
+	if (m_general != nullptr) {
+		delete m_general;
 	}
-	if (sound != nullptr) {
-		delete sound;
-	}
-	if (display != nullptr) {
-		delete display;
+	if (m_display != nullptr) {
+		delete m_display;
 	}
 }
 // ouput information setting
@@ -89,34 +86,34 @@ void Setting::nhapThongTin()
 
 }
 
-void Setting::setGeneral(General* gen)
+void Setting::setGeneral(General* p_general)
 {
-	general = gen;
+	m_general = p_general;
 }
 
 General* Setting::getGeneral()
 {
-	return general;
+	return m_general;
 }
 
-void Setting::setSound(Sound* sou)
+void Setting::setSound(shared_ptr<Sound> p_sound)
 {
-	sound = sou;
+	m_sound = p_sound;
 }
 
-Sound* Setting::getSound()
+shared_ptr<Sound> Setting::getSound()
 {
-	return sound;
+	return m_sound;
 }
 
-void Setting::setDisplay(Display* disp)
+void Setting::setDisplay(Display* p_display)
 {
-	display = disp;
+	m_display = p_display;
 }
 
 Display* Setting::getDisplay()
 {
-	return this->display;
+	return m_display;
 }
 
 void Setting::copyInfo(Setting* st)

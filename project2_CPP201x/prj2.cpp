@@ -4,6 +4,7 @@
 #include <fstream>
 #include <stdlib.h>
 #include <regex>
+#include <memory>
 #include "Car.h"
 #include "CommonInfo.h"
 #include "checkValid.h"
@@ -157,6 +158,7 @@ void NhapThongTinCaiDat_Display()
 // Input Sound Information
 void NhapThongTinCaiDat_Sound()
 {
+	shared_ptr<Sound> p_sound = make_shared<Sound>();
 	char continues = 'n';
 	do {
 		Setting* tempCar = new Setting();
@@ -172,11 +174,14 @@ void NhapThongTinCaiDat_Sound()
 			else {
 				listCar.get(m)->copyInfo(tempCar);
 			}
-			listCar.get(m)->getSound()->nhapThongTin();	// call Sound object from Setting obj and access nhapThongTin_Display()
+			p_sound->nhapThongTin();
+			listCar.get(m)->setSound(std::move(p_sound));
+			// call Sound object from Setting obj and access nhapThongTin_Display()
 		}
 		else {
 			cout << "This is the first car\n";
-			tempCar->getSound()->nhapThongTin();			// call Sound object from Setting obj and access nhapThongTin_Display()
+			p_sound->nhapThongTin();
+			tempCar->setSound(std::move(p_sound));		// call Sound object from Setting obj and access nhapThongTin_Display()
 			listCar.add(tempCar);
 		}
 
