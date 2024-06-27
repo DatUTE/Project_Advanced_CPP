@@ -34,7 +34,7 @@ void showLanguage();
 void SaveData();
 void LoadData();
 
-int menu();
+void menu();
 int check_input(int n);
 void sortList_name();
 void sortList_mscn();
@@ -42,7 +42,8 @@ bool sortName(CommonInfo& a_string, CommonInfo& b_string);
 bool sortNumber(CommonInfo& a_string, CommonInfo& b_string);
 
 // show Menu and selection 
-int menu() {
+void menu() 
+{
 	system("clear");
 	int selection = 0;
 	cout << "--------------HELLO--------------\n";
@@ -52,26 +53,25 @@ int menu() {
 	selection = check_input(4);
 	switch (selection)
 	{
-	case 3:									// Exit 
-		system("clear");
-		cout << "SEE YOU LATER!!!\n";
-		exit(0);
-		break;
-	case 1:									// Input info
-		system("clear");
-		NhapThongTinCaiDat();
-		break;
-	case 2:									// Output info
-		system("clear");
-		XuatThongTinCaiDat();
-		break;
+		case 1:									
+			system("clear");
+			NhapThongTinCaiDat();
+			break;
+		case 2:									
+			system("clear");
+			XuatThongTinCaiDat();
+			break;
+		case 3:								
+			system("clear");
+			cout << "SEE YOU LATER!!!\n";
+			exit(0);
+			break;
 	}
-	return selection;
 }
 
-
 // Input Infomation
-void NhapThongTinCaiDat() {
+void NhapThongTinCaiDat() 
+{
 	system("clear");
 	int choice;
 	cout << "-------Nhap Thong Tin Cai Dat-------" << endl;
@@ -81,37 +81,41 @@ void NhapThongTinCaiDat() {
 	cout << "4. Quay Lai Menu" << endl;
 	choice = check_input(5);
 	switch (choice) {
-	case 1: {
-		cout << " \n--- Nhap thong tin Display --- " << endl;
-		NhapThongTinCaiDat_Display();
-		system("clear");
-		menu();
-		break;
-	}
-	case 2: {
-		cout << " \n--- Nhap thong tin Sound --- " << endl;
-		NhapThongTinCaiDat_Sound();
-		system("clear");
-		menu();
-		break;
-	}
-	case 3: {
-		cout << " \n--- Nhap thong tin General --- " << endl;
-		NhapThongTinCaiDat_General();
-		system("clear");
-		menu();
-		break;
-	}
-	case 4: {
-		system("clear");
-		menu();
-		break;
-	}
-	default:
-	{
-		exit(0);
-		break;
-	}
+		case 1: 
+		{
+			cout << " \n--- Nhap thong tin Display --- " << endl;
+			NhapThongTinCaiDat_Display();
+			system("clear");
+			menu();
+			break;
+		}
+		case 2: 
+		{
+			cout << " \n--- Nhap thong tin Sound --- " << endl;
+			NhapThongTinCaiDat_Sound();
+			system("clear");
+			menu();
+			break;
+		}
+		case 3: 
+		{
+			cout << " \n--- Nhap thong tin General --- " << endl;
+			NhapThongTinCaiDat_General();
+			system("clear");
+			menu();
+			break;
+		}
+		case 4: 
+		{
+			system("clear");
+			menu();
+			break;
+		}
+		default:
+		{
+			exit(0);
+			break;
+		}
 	}
 }
 
@@ -120,6 +124,7 @@ void NhapThongTinCaiDat_Display()
 {
 	int n;
 	system("clear");
+	shared_ptr<Display> p_display = make_shared<Display>();
 	char continues = 'n';
 	do {
 		Setting* tempCar = new Setting();
@@ -135,12 +140,14 @@ void NhapThongTinCaiDat_Display()
 			else {
 				listCar.get(n)->copyInfo(tempCar);
 			}
-			listCar.get(n)->getDisplay()->nhapThongTin();	// call Sound object from Setting obj and access nhapThongTin_Display()
+			p_display->nhapThongTin();
+			listCar.get(n)->setDisplay(p_display);
 		}
 		else
 		{
 			cout << "This is the first car\n";
-			tempCar->getDisplay()->nhapThongTin();			// call Sound object from Setting obj and access nhapThongTin_Display()
+			p_display->nhapThongTin();
+			listCar.get(n)->setDisplay(p_display);
 			listCar.add(tempCar);
 		}
 		cout << "WILL YOU INPUT FOR CAR " << (listCar.size()) + 1 << " ? (y/n): ";
@@ -199,6 +206,7 @@ void NhapThongTinCaiDat_General()
 {
 	int var;
 	char continues = 'n';
+	shared_ptr<General> p_general = make_shared<General>();
 	do {
 		Setting* tempCar = new Setting();
 		int n = 0;
@@ -219,13 +227,15 @@ void NhapThongTinCaiDat_General()
 			showTimeZone();
 			cout << endl;
 			int timeZone_count = check_input(timezoneList.size() + 1); //chose timezones by entering a number on the list
-			listCar.get(n)->getGeneral()->set_timeZone(timezoneList[timeZone_count - 1].getNumber()); // set timezones acording to the number entered above
+			p_general->set_timeZone(timezoneList[timeZone_count - 1].getNumber());
 
 			// show language list and similar to timezone.....
 			showLanguage();
 			cout << endl;
 			int language_count = check_input(languageList.size() + 1);
-			listCar.get(n)->getGeneral()->set_language(languageList[language_count - 1].getName());
+			p_general->set_language(languageList[language_count - 1].getName());
+
+			listCar.get(n)->setGeneral(p_general);
 		}
 		else
 		{
@@ -235,13 +245,16 @@ void NhapThongTinCaiDat_General()
 			showTimeZone();
 			cout << endl;
 			int timeZone_count = check_input(timezoneList.size() + 1); //chose timezones by entering a number on the list
-			listCar.get(n)->getGeneral()->set_timeZone(timezoneList[timeZone_count - 1].getNumber()); // set timezones acording to the number entered above
+			p_general->set_timeZone(timezoneList[timeZone_count - 1].getNumber());
 
 			// show language list and similar to timezone.....
 			showLanguage();
 			cout << endl;
 			int language_count = check_input(languageList.size() + 1);
-			listCar.get(n)->getGeneral()->set_language(languageList[language_count - 1].getName());
+			p_general->set_language(languageList[language_count - 1].getName());
+
+			listCar.get(n)->setGeneral(p_general);
+
 		}
 		cout << "WILL YOU INPUT FOR CAR:  " << listCar.size() + 1 << " ? (y/n): ";
 		continues = checkYorN();
@@ -633,20 +646,25 @@ bool sortNumber(CommonInfo& a_string, CommonInfo& b_string)
 void SaveData() {
 	ofstream file1("data/Setting.txt");
 	try {
-		if (file1.is_open()) {
-			for (int i = 0; i < listCar.size(); i++) { //write all data of obj elements: personal info, general, sound,display into file
+		if (file1.is_open()) 
+		{
+			for (int i = 0; i < listCar.size(); i++) 
+			{ 
+				//write all data of obj elements: personal info, general, sound,display into file
 				file1 << "Common: " << listCar.get(i)->getCarName() << "," << listCar.get(i)->getEmail() << "," << listCar.get(i)->getPersonalKey() << "," << listCar.get(i)->getODO() << "," << listCar.get(i)->getServiceRemind() << " ; ";
 				file1 << "General: " << listCar.get(i)->getGeneral()->get_timeZone() << " , " << listCar.get(i)->getGeneral()->get_language() << " ; ";
 				file1 << "Sound: " << listCar.get(i)->getSound()->get_media_level() << "," << listCar.get(i)->getSound()->get_call_level() << "," << listCar.get(i)->getSound()->get_navi_level() << "," << listCar.get(i)->getSound()->get_notification_level() << " ; ";
 				file1 << "Display: " << listCar.get(i)->getDisplay()->get_light_level() << "," << listCar.get(i)->getDisplay()->get_screen_light_level() << "," << listCar.get(i)->getDisplay()->get_taplo_light_level() << " ;" << endl;
 			}
 		}
-		else {
+		else 
+		{
 			cout << "can't open file!\n";
 			throw exception(); //throw out the warning
 		}
 	}
-	catch (const exception& e) {
+	catch (const exception& e) 
+	{
 		cerr << "khong mo duoc file Setting.txt" << endl;
 	}
 }
@@ -657,8 +675,10 @@ void LoadData() {
 	ifstream file1("Setting.txt");
 	string arrS[13];
 	try {
-		if (file1.is_open()) {
-			while (getline(file1, s)) {
+		if (file1.is_open()) 
+		{
+			while (getline(file1, s)) 
+			{
 				Setting* temp = new Setting;
 				vector<string>PerInfo;
 				vector<string>Sound;
@@ -689,21 +709,23 @@ void LoadData() {
 				listCar.add(temp); // add it into the array elements_ of private of List
 			}
 		}
-		else {
+		else 
+		{
 			throw -1;
 		}
 	}
-	catch (int e) {
+	catch (int e) 
+	{
 		cerr << "error code: " << e << endl;
 	}
 }
+
 int main(int argc, char** argv)
 {
 	LoadData();
 	downloadLanguage();
 	downloadTimeZone();
-	int choice = 0;
-	choice = menu();
+	menu();
 	system("read -p 'Press Enter to continue...' var");
 	return 0;
 }

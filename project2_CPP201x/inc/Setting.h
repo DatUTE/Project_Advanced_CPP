@@ -19,17 +19,17 @@ public:
 	~Setting();
 	void xuatThongTin();
 	void nhapThongTin();
-	void setGeneral(General* p_general);
-	General* getGeneral();
+	void setGeneral(shared_ptr<General> p_general);
+	shared_ptr<General> getGeneral();
 	void setSound(shared_ptr<Sound> p_sound);
 	shared_ptr<Sound> getSound();
-	void setDisplay(Display* p_display);
-	Display* getDisplay();
+	void setDisplay(shared_ptr<Display> p_display);
+	shared_ptr<Display> getDisplay();
 	void copyInfo(Setting* st);
 private:
 	shared_ptr<Sound> m_sound;
-	General* m_general;
-	Display* m_display;
+	shared_ptr<General> m_general;
+	shared_ptr<Display> m_display;
 };
 #endif /* SETTING_H_ */
 

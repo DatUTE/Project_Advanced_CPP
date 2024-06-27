@@ -14,11 +14,11 @@ Sound::~Sound()
 int checkNum()
 {
 	regex Sound_level("[0-9]+");
-	string s_Sound_level = "";
+	string sound_level = "";
 	bool valid = true;
 	do {
-		getline(cin, s_Sound_level);
-		if (!regex_match(s_Sound_level, Sound_level)) {
+		getline(cin, sound_level);
+		if (!regex_match(sound_level, Sound_level)) {
 			cout << "Input value follow number!!!\n";
 			cout << "enter again: ";
 			valid = false;
@@ -28,7 +28,7 @@ int checkNum()
 			valid = true;
 		}
 	} while (!valid);
-	return stoi(s_Sound_level);
+	return stoi(sound_level);
 }
 
 void Sound::nhapThongTin()

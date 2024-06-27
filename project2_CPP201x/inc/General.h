@@ -15,8 +15,8 @@ public:
 	void xuatThongTin();
 	string get_language();
 	string get_timeZone();
-	void set_timeZone(string data);
-	void set_language(string data);
+	void set_timeZone(const string& data);
+	void set_language(const string& data);
 private:
 	string timeZone;
 	string language;

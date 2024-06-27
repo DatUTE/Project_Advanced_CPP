@@ -25,10 +25,10 @@ public:
 	int getODO();
 	string getEmail();
 	int getServiceRemind();
-	void setCarName(string data);
-	void setPersonalKey(string data);
+	void setCarName(const string& data);
+	void setPersonalKey(const string& data);
 	void setODO(int data);
-	void setEmail(string data);
+	void setEmail(const string& data);
 	void setServiceRemind(int data);
 
 };

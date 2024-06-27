@@ -30,13 +30,13 @@ int Car::getODO() {
 int Car::getServiceRemind() {
 	return this->service_remind;
 }
-void Car::setCarName(string data) {
+void Car::setCarName(const string& data) {
 	this->car_name = data;
 }
-void Car::setPersonalKey(string data) {
+void Car::setPersonalKey(const string& data) {
 	this->personal_key = data;
 }
-void Car::setEmail(string data) {
+void Car::setEmail(const string& data) {
 	this->email = data;
 }
 void Car::setODO(int data) {

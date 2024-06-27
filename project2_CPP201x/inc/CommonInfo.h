@@ -17,11 +17,11 @@ public:
 		return name;
 	}
 
-	void setNumber(string data) {
+	void setNumber(const string& data) {
 		number = data;
 	}
 
-	void setName(string data) {
+	void setName(const string& data) {
 		name = data;
 	}
 private:

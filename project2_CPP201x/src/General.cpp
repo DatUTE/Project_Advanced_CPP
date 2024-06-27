@@ -28,12 +28,12 @@ string General::get_timeZone() {
 	return this->timeZone;
 }
 
-void General::set_timeZone(string data)
+void General::set_timeZone(const string& data)
 {
 	this->timeZone = data;
 }
 
-void General::set_language(string data) {
+void General::set_language(const string& data) {
 	this->language = data;
 }
 

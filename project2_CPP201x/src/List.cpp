@@ -6,13 +6,15 @@ List<T> ::List()
 	index = 0;
 	elements_[100];
 }
+
 template<typename T>
 List<T>::~List()
 {
 
 }
+
 template <class T>
-void List<T> ::add(T const& item)
+void List<T>::add(const T& item)
 {
 	if (index < 100)
 	{
@@ -25,8 +27,9 @@ void List<T> ::add(T const& item)
 	}
 
 }
+
 template <class T>
-T List<T> ::get(int pos)
+T List<T>::get(int pos)
 {
 	if (pos < 100)
 	{
@@ -38,13 +41,15 @@ T List<T> ::get(int pos)
 	}
 	return {};
 }
+
 template<class T>
-int List<T> ::size()
+int List<T>::size()
 {
-	return (index);
+	return index;
 }
+
 template<class T>
-void List<T> ::Swap(int i, int j)
+void List<T>::Swap(int i, int j)
 {
 	T a;
 	a = elements_[i];
